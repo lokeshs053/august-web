@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Welcome to javascript")
+        var abc;
+        console.log(abc)
+        console.log(typeof(abc))
+        abc="javscript"
+        console.log(abc)
+        console.log(typeof(abc))
+        abc=123
+        console.log(abc)
+        console.log(typeof(abc))
+        abc=true
+        console.log(abc)
+        console.log(typeof(abc))
+        abc='b'
+        console.log(typeof(abc))
+        function display() {
+            console.log("calling display")
+           var displayMessage = 
+           document.getElementById("message")
+           console.log(displayMessage)
+           displayMessage.innerHTML ="calling display"
+        }
+        
+
+
+        function addition() {
+            console.log("calling addition")
+            var firstElement = 
+            document.getElementById("number1")
+            console.log(firstElement)
+           console.log(firstElement.value)
+          var secondElement =
+           document.getElementById("number2")
+           console.log(secondElement)
+           console.log(secondElement.value)
+           var result = parseInt(firstElement.value) + parseInt(secondElement.value)
+           var output = document.getElementById("addMessage") 
+           console.log(output)
+           output.innerHTML = result
+        }
+
+        function register() {
+          var username =  document.getElementById("username")
+          console.log(username.value)
+          console.log(username.value.length)
+          if(username.value.length =='') {
+            console.log("Please Enter Username")
+           var usernameMessage =  document.getElementById("usernameMessage")
+           usernameMessage.innerHTML = "Please Enter Username"
+          }
+         var email =  document.getElementById("email")
+         if(email.value.length =='') {
+            console.log("Please Enter Email")
+          var emailErrorMessage =  
+           document.getElementById("emailErrorMessage")
+          emailErrorMessage.innerHTML = "Please Enter Email"
+          emailErrorMessage.style.color = "red"
+         }
+         var password =  document.getElementById("password")
+         //document.formname.filedname 
+
+         console.log(document.userregister.gender)
+         
+         console.log(document.userregister.gender[0].checked)
+        //  if(document.userregister.gender[0].checked)
+        if(document.userregister.gender[0].checked == false &&
+        document.userregister.gender[1].checked == false &&
+        document.userregister.gender[2].checked == false) {
+            console.log("Please select gender")
+            var genderErrorMessage= 
+                document.getElementById("genderErrorMessage")
+            genderErrorMessage.innerHTML = "Please select gender"
+        }
+        var genderValue;
+        if(document.userregister.gender[0].checked == true ) {
+            genderValue = document.userregister.gender[0].value
+        } else if (document.userregister.gender[1].checked == true ) {
+            genderValue = document.userregister.gender[1].value
+        }else if (document.userregister.gender[2].checked == true ) {
+            genderValue = document.userregister.gender[2].value
+        }
+
+        
+        if(document.userregister.city.value == "0") {
+            console.log("Please Select City")
+           var cityErrorMessage = 
+            document.getElementById("cityErrorMessage")
+            cityErrorMessage.innerHTML = "Please Select City"
+        }
+
+
+        // storage 
+        // localstorage , session storage 
+
+        var userRegisterObject = {
+            "username":username.value,
+            "email":email.value,
+            "password":password.value,
+            "gender":genderValue,
+            "city":document.userregister.city.value
+        }
+       var userRegisterString = JSON.stringify(userRegisterObject)
+        localStorage.setItem(
+            "appRegister",JSON.stringify(userRegisterObject))
+
+
+
+
+        }
+ </script>
+</head>
+<body>
+    <h1> Introduction to javascript</h1>
+    <button  onmouseover="display()"  onclick="display()"
+    >Display</button>
+    <div id="message"></div>
+    <form action="" method="post">
+        <div>
+            <label>Enter Number1</label>
+            <input  type="text" name="num1" id="number1">
+        </div>
+        <div>
+            <label>Enter Number2</label>
+            <input type="text" name="num2" id="number2">
+        </div>
+        <button
+         type="button" onclick="addition()">Addition</button>
+        <div id="addMessage"></div>
+        <button
+         type="button" onclick="subtraction()">subtraction</button>
+    </form>
+
+
+    <form name="userregister">
+        <div>
+            <label>Enter Username</label>
+            <input type="text" name="username" id="username">
+            <div id="usernameMessage"></div>
+        </div>
+        <div>
+            <label>Enter Email</label>
+            <input type="email" name="email" id="email">
+            <div id="emailErrorMessage"></div>
+        </div>
+        <div>
+            <label>Enter Password</label>
+            <input type="password" name="password" id="password">
+            <div id="passwordErrorMessage"></div>
+        </div>
+        <div>
+            <label>Select Gender</label>
+            <input type="radio" name="gender" value="mal">Male
+            <input type="radio" name="gender" value="femal">Female 
+            <input type="radio" name="gender" value="other">Others 
+            <div id="genderErrorMessage"></div>
+        </div>
+        <div>
+            <label >Select City</label>
+            <select name="city">
+                <option value="0">--select city--</option>
+                <option value="bang">Bangalore</option>
+                <option value="mangalore">Mangalore</option>
+            </select>
+                <div id="cityErrorMessage"></div>
+        </div>
+
+        <button type="button" onclick="register()">Register</button>
+    </form>
+
+    <!-- Data type in Js - Javascript
+    1.String
+    2.Number
+    3.Boolean
+    4.undefined
+    5.null
+    
+
+
+    HTML DOM 
+
+
+    -->
+
+
+   
+</body>
+</html>

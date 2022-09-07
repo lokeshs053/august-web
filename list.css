@@ -1,0 +1,95 @@
+h1,h2 {
+    color: red;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+
+}
+
+h1 {
+    padding:20px 10px;
+    border: 1px dotted red;
+    /* margin-left: 20px; */
+    margin:20px
+}
+
+/* div {
+    color: green;
+} */
+.username {
+    color: blue;
+}
+
+#email {
+    color: aqua;
+}
+
+tr:hover {
+    color: blue;
+    background-color: aqua;
+}
+tr {
+    color: green;
+}
+
+/* body  {
+    background-image: url('C:\\Users\\LokeshS\\Documents\\August\\pexels.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+} */
+
+.box {
+    border: 1px solid green;
+    height: 100px;
+    width: 200px;
+}
+/* Descendant Selector */
+/* div p {
+    color: blue;
+} */
+
+/* Child Selector */
+/* div > p {
+    color: red;
+} */
+
+/* Adjacent Selector  */
+div + p {
+    color: blue;
+}
+
+/* General Sibling selector */
+div ~ p {
+    color: aqua;
+}
+
+
+
+.fixed {
+    position: fixed;
+    top: 0;
+}
+
+.relative {
+    position: relative;
+    left:100px;
+}
+
+.image {
+    position: relative;
+}
+.topleft {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
